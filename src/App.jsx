@@ -1,9 +1,10 @@
-import { AboutSection } from './components/AboutSection'
+import { CaseStudiesSection } from './components/CaseStudiesSection'
 import { ContactSection } from './components/ContactSection'
 import { Footer } from './components/Footer'
 import { HeroSection } from './components/HeroSection'
+import { HowIWorkSection } from './components/HowIWorkSection'
 import { Navbar } from './components/Navbar'
-import { ProjectsSection } from './components/ProjectsSection'
+import { StrategicFitSection } from './components/StrategicFitSection'
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
       <Navbar />
       <main>
         <HeroSection />
-        <AboutSection />
-        <ProjectsSection />
+        <HowIWorkSection />
+        <StrategicFitSection />
+        <CaseStudiesSection />
         <ContactSection />
       </main>
       <Footer />

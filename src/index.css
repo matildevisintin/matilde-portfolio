@@ -2,19 +2,24 @@
 
 @theme {
   --font-sans:
-    'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
 
-  --color-surface: #fafafa;
-  --color-surface-elevated: #ffffff;
-  --color-ink: #0a0a0a;
-  --color-muted: #737373;
-  --color-border: #e5e5e5;
-  --color-accent: #171717;
+  /* Industrial-tech dark (Scandinavian minimal) */
+  --color-surface: #0b0d10;
+  --color-surface-elevated: #12151b;
+  --color-surface-card: #161b24;
+  --color-ink: #f4f4f5;
+  --color-muted: #a1a1aa;
+  --color-border: #27272f;
+  --color-accent: #5eead4;
+  --color-accent-dim: rgba(94, 234, 212, 0.12);
+  --color-accent-strong: #2dd4bf;
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;
+  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -49,7 +49,10 @@ Ricostruisci con `npm run build` e pubblica il contenuto di `dist`.
 
 ## Personalizzazione
 
-- Email e link social: `src/components/ContactSection.jsx`
-- Testi Hero e About: `src/components/HeroSection.jsx`, `AboutSection.jsx`
-- Elenco progetti (placeholder): `src/data/projects.js`
-- Colori e font: `src/index.css` (`@theme`)
+- Email (opzionale via env): `VITE_CONTACT_EMAIL` in `.env` — fallback in `ContactSection.jsx`
+- Link social: `src/components/ContactSection.jsx`
+- Narrativa strategica / hero: `src/components/HeroSection.jsx`
+- Modalità operative: `src/components/HowIWorkSection.jsx`
+- Strategic fit copy: `src/components/StrategicFitSection.jsx`
+- Case studies: `src/data/caseStudies.js`
+- Colore industriale-dark e font IBM Plex: `src/index.css` (`@theme`)
