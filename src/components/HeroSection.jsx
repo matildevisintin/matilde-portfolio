@@ -7,35 +7,23 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden border-b border-[var(--color-border)] px-5 pb-28 pt-14 md:pb-40 md:pt-24"
+      className="relative overflow-hidden border-b border-[var(--color-border)] px-5 pb-28 pt-14 md:pb-36 md:pt-20"
     >
-      <div
-        className="pointer-events-none absolute -left-32 top-0 h-[32rem] w-[32rem] rounded-full bg-[var(--color-accent-dim)] blur-[120px] motion-reduce:opacity-60"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-teal-900/20 blur-[100px] motion-reduce:opacity-60"
-        aria-hidden
-      />
-
-      <div className="relative mx-auto max-w-6xl text-center md:text-left">
-        <p className="hero-fade text-[11px] font-bold uppercase tracking-[0.25em] text-[var(--color-accent-strong)]">
-          International Materials Engineering · Circular Innovation
+      <div className="relative mx-auto max-w-6xl">
+        <p className="hero-fade text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-ink)]">
+          DTU Alumna · Materials Engineering · Circular Transition
         </p>
-        <h1 className="hero-fade hero-fade-delay-1 mt-10 max-w-4xl text-4xl font-semibold leading-[1.1] tracking-tight text-[var(--color-ink)] md:text-6xl lg:text-7xl">
+        <h1 className="hero-fade hero-fade-delay-1 mt-8 max-w-4xl text-3xl font-semibold leading-[1.12] tracking-tight text-[var(--color-ink)] md:text-5xl lg:text-[3.35rem]">
           {user.name}
         </h1>
-        <p className="hero-fade hero-fade-delay-2 mt-8 max-w-3xl text-xl font-medium leading-relaxed text-zinc-300 md:text-2xl">
-          {user.title}
-        </p>
-        <p className="hero-fade hero-fade-delay-2 mt-6 max-w-2xl text-[16px] leading-relaxed text-zinc-400 md:text-lg">
+        <p className="hero-fade hero-fade-delay-2 mt-6 max-w-3xl text-lg font-normal leading-relaxed text-[var(--color-ink)] md:text-xl opacity-90">
           {user.bioShort}
         </p>
 
-        <div className="hero-fade hero-fade-delay-3 mt-12 flex flex-wrap justify-center gap-4 md:justify-start">
+        <div className="hero-fade hero-fade-delay-3 mt-10 flex flex-wrap gap-4">
           <a
             href="#contact"
-            className="inline-flex min-h-12 items-center justify-center rounded-full bg-[var(--color-accent)] px-10 text-[15px] font-bold text-zinc-950 transition-all duration-300 hover:bg-[var(--color-accent-strong)] hover:-translate-y-1 active:translate-y-0"
+            className="inline-flex min-h-11 items-center justify-center rounded-full bg-[var(--color-ink)] px-8 text-sm font-semibold text-white transition-[transform,opacity] duration-300 hover:opacity-90 hover:-translate-y-0.5 active:translate-y-0"
           >
             Get In Touch
           </a>
@@ -43,7 +31,7 @@ export function HeroSection() {
             href={user.cvUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-12 items-center justify-center rounded-full border border-zinc-700 bg-transparent px-10 text-[15px] font-bold text-zinc-200 transition-all duration-300 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] hover:-translate-y-1 active:translate-y-0"
+            className="inline-flex min-h-11 items-center justify-center rounded-full border border-[var(--color-border)] bg-transparent px-8 text-sm font-semibold text-[var(--color-ink)] transition-all duration-300 hover:bg-[var(--color-ink)] hover:text-white hover:-translate-y-0.5 active:translate-y-0"
           >
             View Resume
           </a>

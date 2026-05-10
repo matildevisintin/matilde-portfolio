@@ -4,22 +4,22 @@
   --font-sans:
     'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
 
-  /* Industrial-tech dark (Scandinavian minimal) */
-  --color-surface: #0b0d10;
-  --color-surface-elevated: #12151b;
-  --color-surface-card: #161b24;
-  --color-ink: #f4f4f5;
-  --color-muted: #a1a1aa;
-  --color-border: #27272f;
-  --color-accent: #5eead4;
-  --color-accent-dim: rgba(94, 234, 212, 0.12);
-  --color-accent-strong: #2dd4bf;
+  /* Technical Elegance Palette */
+  --color-surface: #FFFDE7; /* Light Pastel Yellow */
+  --color-surface-elevated: #FFF9C4;
+  --color-surface-card: #FFFFFF;
+  --color-ink: #6200EA; /* Vibrant Purple */
+  --color-muted: #7C4DFF;
+  --color-border: rgba(98, 0, 234, 0.15);
+  --color-accent: #6200EA;
+  --color-accent-dim: rgba(98, 0, 234, 0.05);
+  --color-accent-strong: #4500b5;
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 @media (prefers-reduced-motion: reduce) {

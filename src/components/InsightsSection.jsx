@@ -3,46 +3,45 @@ import { Reveal } from './Reveal'
 
 export function InsightsSection() {
   return (
-    <section id="insights" className="px-5 py-24 md:py-32">
+    <section id="insights" className="border-b border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent-strong)]">
-            Thought Leadership — Circular Economy
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--color-accent)]">
+            Thought Leadership
           </p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-[var(--color-ink)] md:text-4xl">
-            Insights & Perspectives
+          <h2 className="mt-6 text-3xl font-semibold tracking-tight text-[var(--color-ink)] md:text-4xl">
+            Why Circular Economy in Materials Engineering Matters
           </h2>
-          <p className="mt-6 max-w-3xl text-[15px] leading-relaxed text-zinc-400">
-            Exploring the intersection of materials engineering, industrial sustainability, 
-            and circular systems.
+          <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-[var(--color-muted)]">
+            Technical rigor is essential for successful circular economy transitions. We must look beyond the 'green' label to the fundamental behavior of materials at scale.
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-2">
+        <div className="mt-16 grid gap-8 md:grid-cols-2">
           {insights.map((insight, i) => (
             <Reveal key={insight.id} delayMs={100 * i}>
-              <article className="group relative flex flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-8 transition-all hover:border-zinc-700">
+              <article className="group relative flex flex-col rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-card)] p-8 transition-all hover:border-[var(--color-accent)] hover:shadow-xl">
                 <div className="flex items-center gap-3">
-                  <time className="text-[11px] font-bold uppercase tracking-wider text-zinc-500">
+                  <time className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-muted)]">
                     {new Date(insight.publishedAt).toLocaleDateString('en-US', {
                       month: 'short',
                       day: 'numeric',
                       year: 'numeric',
                     })}
                   </time>
-                  <span className="text-zinc-700">/</span>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-500">
+                  <span className="h-px w-4 bg-[var(--color-border)]" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[var(--color-muted)]">
                     {insight.readingTime} min read
                   </span>
                 </div>
                 
-                <h3 className="mt-6 text-xl font-semibold leading-tight text-[var(--color-ink)] group-hover:text-[var(--color-accent)] transition-colors">
+                <h3 className="mt-6 text-2xl font-semibold leading-tight text-[var(--color-ink)] group-hover:text-[var(--color-accent)] transition-colors">
                   <a href="#contact">
                     {insight.title}
                   </a>
                 </h3>
                 
-                <p className="mt-4 text-[15px] leading-relaxed text-zinc-400">
+                <p className="mt-4 text-[15px] leading-relaxed text-[var(--color-muted)]">
                   {insight.excerpt}
                 </p>
 
@@ -50,7 +49,7 @@ export function InsightsSection() {
                   {insight.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-zinc-400"
+                      className="rounded-full bg-[var(--color-accent-dim)] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent)]"
                     >
                       {tag}
                     </span>

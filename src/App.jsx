@@ -2,19 +2,19 @@ import { CaseStudiesSection } from './components/CaseStudiesSection'
 import { ContactSection } from './components/ContactSection'
 import { Footer } from './components/Footer'
 import { HeroSection } from './components/HeroSection'
-import { HowIWorkSection } from './components/HowIWorkSection'
+import { ValuePropositionSection } from './components/ValuePropositionSection'
+import { LearningSection } from './components/LearningSection'
 import { InsightsSection } from './components/InsightsSection'
 import { Navbar } from './components/Navbar'
-import { StrategicFitSection } from './components/StrategicFitSection'
 
 function App() {
   return (
-    <div className="min-h-svh">
+    <div className="min-h-svh bg-[var(--color-surface)]">
       <Navbar />
       <main>
         <HeroSection />
-        <HowIWorkSection />
-        <StrategicFitSection />
+        <ValuePropositionSection />
+        <LearningSection />
         <CaseStudiesSection />
         <InsightsSection />
         <ContactSection />

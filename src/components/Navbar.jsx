@@ -3,10 +3,9 @@ import { user } from '../data/user'
 
 const links = [
   { href: '#home', label: 'Home' },
-  { href: '#how-i-work', label: 'About' },
+  { href: '#about', label: 'About' },
   { href: '#projects', label: 'Projects' },
   { href: '#insights', label: 'Insights' },
-  { href: '#contact', label: 'Contact' },
 ]
 
 export function Navbar() {
@@ -59,20 +58,19 @@ export function Navbar() {
           className="min-w-0 truncate text-[14px] font-semibold tracking-tight text-[var(--color-ink)] md:text-[15px]"
           onClick={() => setOpen(false)}
         >
-          <span className="text-[var(--color-accent)]">M.</span>{' '}
-          Visintin
+          <span className="font-bold">MATILDE</span> VISINTIN
         </a>
 
-        <div className="hidden items-center gap-6 lg:flex">
-          <ul className="flex flex-wrap justify-end gap-x-8 gap-y-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
+        <div className="hidden items-center gap-8 lg:flex">
+          <ul className="flex flex-wrap justify-end gap-x-8 gap-y-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink)]">
             {links.map(({ href, label }) => {
               const isActive = activeSection === href.replace('#', '')
               return (
                 <li key={href}>
                   <a
                     href={href}
-                    className={`transition-colors duration-300 hover:text-[var(--color-accent)] ${
-                      isActive ? 'text-[var(--color-accent)]' : ''
+                    className={`transition-colors duration-300 hover:opacity-70 ${
+                      isActive ? 'text-[var(--color-ink)] border-b border-[var(--color-ink)]' : 'opacity-60'
                     }`}
                   >
                     {label}
@@ -85,23 +83,17 @@ export function Navbar() {
                 href={user.cvUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="transition-colors duration-300 hover:text-[var(--color-accent)]"
+                className="opacity-60 transition-colors duration-300 hover:opacity-100"
               >
-                View Resume
+                Resume
               </a>
             </li>
           </ul>
-          <a
-            href="#contact"
-            className="inline-flex min-h-10 items-center justify-center rounded-full bg-[var(--color-accent)] px-5 text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-950 transition-colors duration-300 hover:bg-[var(--color-accent-strong)]"
-          >
-            Get In Touch
-          </a>
         </div>
 
         <button
           type="button"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)] text-zinc-300 lg:hidden"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)] text-[var(--color-ink)] lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen((o) => !o)}
@@ -116,14 +108,14 @@ export function Navbar() {
           id="mobile-menu"
           className="border-t border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-8 lg:hidden"
         >
-          <ul className="flex flex-col gap-5 text-sm font-semibold uppercase tracking-wider text-zinc-200">
+          <ul className="flex flex-col gap-5 text-sm font-semibold uppercase tracking-wider text-[var(--color-ink)]">
             {links.map(({ href, label }) => {
               const isActive = activeSection === href.replace('#', '')
               return (
                 <li key={href}>
                   <a
                     href={href}
-                    className={`block py-1 ${isActive ? 'text-[var(--color-accent)]' : ''}`}
+                    className={`block py-1 ${isActive ? 'font-bold' : 'opacity-70'}`}
                     onClick={() => setOpen(false)}
                   >
                     {label}
@@ -136,16 +128,71 @@ export function Navbar() {
                 href={user.cvUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="block py-1"
+                className="block py-1 opacity-70"
                 onClick={() => setOpen(false)}
               >
-                View Resume
+                Resume
               </a>
             </li>
-            <li className="pt-2">
+          </ul>
+        </div>
+      ) : null}
+    </header>
+  )
+}
+
+        <button
+          type="button"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)] text-[var(--color-muted)] lg:hidden"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          onClick={() => setOpen((o) => !o)}
+        >
+          <span className="sr-only">Open menu</span>
+          <span aria-hidden className="text-xl">{open ? '✕' : '☰'}</span>
+        </button>
+      </nav>
+
+      {open ? (
+        <div
+          id="mobile-menu"
+          className="border-t border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-10 lg:hidden"
+        >
+          <ul className="flex flex-col gap-6 text-[12px] font-bold uppercase tracking-[0.2em] text-[var(--color-ink)]">
+            {links.map(({ href, label }) => {
+              if (label === 'Resume') {
+                return (
+                  <li key={href}>
+                    <a
+                      href={user.cvUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      download
+                      className="block py-2"
+                      onClick={() => setOpen(false)}
+                    >
+                      {label}
+                    </a>
+                  </li>
+                )
+              }
+              const isActive = activeSection === href.replace('#', '')
+              return (
+                <li key={href}>
+                  <a
+                    href={href}
+                    className={`block py-2 ${isActive ? 'text-[var(--color-accent)]' : ''}`}
+                    onClick={() => setOpen(false)}
+                  >
+                    {label}
+                  </a>
+                </li>
+              )
+            })}
+            <li className="pt-4">
               <a
                 href="#contact"
-                className="inline-flex min-h-10 w-full items-center justify-center rounded-full bg-[var(--color-accent)] px-5 text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-950"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-[var(--color-accent)] px-6 text-[12px] font-bold uppercase tracking-[0.2em] text-white"
                 onClick={() => setOpen(false)}
               >
                 Get In Touch
