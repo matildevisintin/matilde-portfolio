@@ -3,25 +3,25 @@ import { Reveal } from './Reveal'
 
 const pillars = [
   {
-    title: 'Laboratory-grade data fidelity',
+    title: 'Technical Rigor',
     blurb:
-      'Measurements you can defend in a contentious review—repeatable protocols, sober uncertainty, minimal hand-waving.',
+      'Engineering background with a focus on materials science and mechanical behavior. I bring structured thinking to complex industrial challenges.',
     Icon: IconLayout,
-    tag: 'Chemical Integrity',
+    tag: 'Materials Science',
   },
   {
-    title: 'Digital rapid prototyping',
+    title: 'Circular Innovation',
     blurb:
-      'Assistive tooling (protocols augmented by vibe-coding discipline) speeds screening without bypassing QA gates Ops actually trust.',
+      'Translating circular economy concepts into practical recycling pathways for thermoset composites and wind energy systems.',
     Icon: IconCode,
-    tag: 'Scalable Pilot',
+    tag: 'Sustainability',
   },
   {
-    title: 'ISO-aligned industrial hygiene',
+    title: 'International Mindset',
     blurb:
-      'Compliance isn’t ornamentation—it’s procurement survival. Structured traceability framing that maps to audits, contracts, insurer questions.',
+      'Educated in Italy and Denmark. Comfortable working in multicultural environments and delivering results in high-pressure settings.',
     Icon: IconSparkles,
-    tag: 'Standards-conscious',
+    tag: 'Global Profile',
   },
 ]
 
@@ -34,19 +34,15 @@ export function HowIWorkSection() {
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent-strong)]">
-            For Jacob Petersen — operational pragmatists
+            About & Work Ethic
           </p>
           <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-[var(--color-ink)] md:text-4xl">
-            How I Work: Zero Academic Ego
+            A Future Innovation Leader
           </h2>
           <p className="mt-6 max-w-3xl text-[15px] leading-relaxed text-zinc-400 md:text-base">
-            I&apos;m built to integrate like a{' '}
-            <span className="font-semibold text-zinc-200">
-              plug-and-play assistant for technical delivery
-            </span>
-            : fast cycles, ruthless prioritisation on what gates a decision, no
-            performative genius. Copenhagen taught me cynicism—the kind that
-            keeps projects inside reality, not metaphysics.
+            I am driven by curiosity and a strong interest in solving real industrial sustainability challenges. 
+            My approach combines technical rigor with the resilience and discipline developed through diverse 
+            academic and professional experiences.
           </p>
         </Reveal>
 

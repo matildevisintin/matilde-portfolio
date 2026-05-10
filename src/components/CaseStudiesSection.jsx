@@ -10,49 +10,33 @@ const cardSurfaces = [
 export function CaseStudiesSection() {
   return (
     <section
-      id="case-studies"
+      id="projects"
       className="border-y border-[var(--color-border)] bg-[var(--color-surface-elevated)] px-5 py-24 md:py-32"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent-strong)]">
-            Business cases — not school projects
+            Featured Projects — Research & Industry
           </p>
           <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-[var(--color-ink)] md:text-4xl">
-            Case Studies
+            Selected Work
           </h2>
           <p className="mt-6 max-w-3xl text-[15px] leading-relaxed text-zinc-400">
-            Narratives aimed at capex-ready discussions: bounded claims, tangible
-            levers — not generic “portfolio pieces.” Metrics are directional
-            where proprietary; tighten with your datasets when under NDA.
+            A hybrid look into technical research and circular economy systems. 
+            Focused on bridging the gap between academic rigor and industrial scalability.
           </p>
         </Reveal>
 
-        <ul className="mt-14 grid gap-10 md:grid-cols-2 xl:grid-cols-3">
+        <ul className="mt-14 grid gap-10 md:grid-cols-2">
           {caseStudies.map((cs, i) => (
             <Reveal key={cs.id} delayMs={80 * i}>
               <li>
-                <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-card)] transition-[box-shadow,border-color] duration-300 hover:border-zinc-600 hover:shadow-lg hover:shadow-black/40">
-                  <div
-                    className={`aspect-[16/10] relative overflow-hidden ${cardSurfaces[i % cardSurfaces.length]}`}
-                    aria-hidden
-                  >
-                    <div className="absolute inset-0 flex flex-col justify-end p-6">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-teal-200/90">
-                        {cs.kicker}
-                      </p>
-                      <div className="mt-3 flex flex-wrap items-end gap-2">
-                        <span className="text-3xl font-semibold tracking-tight text-[var(--color-ink)]">
-                          {cs.metric}
-                        </span>
-                        <span className="max-w-[12rem] text-[11px] font-medium uppercase tracking-wider text-zinc-400">
-                          {cs.metricLabel}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-card)] transition-all duration-300 hover:border-zinc-700 hover:shadow-2xl hover:shadow-black/50">
                   <div className="flex flex-1 flex-col p-8">
                     <div className="flex flex-wrap gap-2">
+                      <span className="rounded-full bg-teal-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[var(--color-accent-strong)]">
+                        {cs.type}
+                      </span>
                       {cs.tags.map((t) => (
                         <span
                           key={t}
@@ -62,20 +46,32 @@ export function CaseStudiesSection() {
                         </span>
                       ))}
                     </div>
-                    <h3 className="mt-6 text-xl font-semibold tracking-tight text-[var(--color-ink)]">
+                    <h3 className="mt-8 text-2xl font-semibold tracking-tight text-[var(--color-ink)]">
                       {cs.title}
                     </h3>
-                    <p className="mt-4 flex-1 text-[14px] leading-relaxed text-zinc-400">
+                    <p className="mt-4 text-[15px] leading-relaxed text-zinc-400">
                       {cs.description}
                     </p>
+                    
+                    <div className="mt-8 grid gap-6 border-t border-[var(--color-border)] pt-8">
+                      <div>
+                        <h4 className="text-[11px] font-bold uppercase tracking-wider text-zinc-500">The Challenge</h4>
+                        <p className="mt-2 text-[14px] text-zinc-400">{cs.problem}</p>
+                      </div>
+                      <div>
+                        <h4 className="text-[11px] font-bold uppercase tracking-wider text-zinc-500">Technical Approach</h4>
+                        <p className="mt-2 text-[14px] text-zinc-400">{cs.approach}</p>
+                      </div>
+                    </div>
+
                     <a
                       href={cs.href}
-                      className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-accent)] transition-colors hover:text-[var(--color-accent-strong)]"
+                      className="mt-10 inline-flex items-center gap-2 text-sm font-bold text-[var(--color-accent)] transition-colors hover:text-[var(--color-accent-strong)]"
                     >
-                      Request appendix / briefing
+                      View Project Details
                       <span
                         aria-hidden
-                        className="transition-transform group-hover:translate-x-0.5"
+                        className="transition-transform group-hover:translate-x-1"
                       >
                         →
                       </span>

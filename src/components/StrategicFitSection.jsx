@@ -2,19 +2,19 @@ import { Reveal } from './Reveal'
 
 const checkpoints = [
   {
-    headline: 'C2 English · executive clarity',
+    headline: 'English-First Communication',
     copy:
-      'Writing and presentation tuned for board-adjacent discussions: crisp causal chains, disciplined terminology, fewer adjectives pretending to be analysis.',
+      'C1 proficiency with experience in international research environments. Capable of translating technical findings into clear, actionable business insights.',
   },
   {
-    headline: 'Operational credibility',
+    headline: 'Disciplined & Resilient',
     copy:
-      'Experience shaped by three years commuting between countries and sustaining performance in demanding service-sector roles — execution under fatigue, timelines that don\'t forgive theatre.',
+      'Proven work ethic shaped by academic rigor and professional roles in diverse sectors. I am used to managing multiple priorities and delivering high-quality output.',
   },
   {
-    headline: 'Resilience packaged as professionalism',
+    headline: 'Technical Ambition',
     copy:
-      '“Grit” isn’t motivational wallpaper here. It’s proof you can rely on throughput when stakeholder pressure spikes and spreadsheets get uncomfortable.',
+      'Highly proactive attitude towards learning and innovation. Focused on high-potential areas like wind energy recycling and circular material systems.',
   },
 ]
 
@@ -25,19 +25,18 @@ export function StrategicFitSection() {
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-5">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-accent-strong)]">
-              For Brigitte Hansen — strategic clarity
+              Strategic Value Proposition
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--color-ink)] md:text-4xl">
-              The Strategic Fit
+              Why I am the Right Fit
             </h2>
             <p className="mt-6 text-[15px] leading-relaxed text-zinc-400">
-              Crystal clear proposition: bridge{' '}
+              I bring a unique combination of{' '}
               <span className="font-semibold text-zinc-200">
-                ESG liabilities → recoverable economics
+                technical credibility and international mindset
               </span>{' '}
-              with material evidence that survives diligence—not aspiration
-              slide art. Tone is controlled, cynical where useful, optimised
-              for profit-and-loss coherence.
+              to your team. My goal is to support innovation leaders in 
+              navigating the complexities of circular economy transitions.
             </p>
           </Reveal>
 
@@ -60,20 +59,18 @@ export function StrategicFitSection() {
             <Reveal className="mt-10" delayMs={260}>
               <div className="rounded-2xl border border-teal-500/30 bg-teal-500/5 px-8 py-6">
                 <p className="text-sm font-semibold text-[var(--color-ink)]">
-                  Summary line for stakeholder routing
+                  The Bottom Line
                 </p>
                 <p className="mt-3 text-[15px] leading-relaxed text-zinc-400">
-                  Hire me where composite waste stops being cheap to ignore but
-                  expensive to misunderstand — and you need somebody who speaks
-                  both{' '}
+                  Partner with me to bridge{' '}
                   <span className="text-zinc-200">
-                    Chemical Integrity / ISO traceability
+                    technical engineering rigor
                   </span>{' '}
                   and{' '}
                   <span className="text-zinc-200">
-                    Operational EBITDA narratives
-                  </span>{' '}
-                  without flinching.
+                    sustainable innovation
+                  </span>. 
+                  I am ready to contribute to projects that require a disciplined, international-minded approach to circular economy challenges.
                 </p>
               </div>
             </Reveal>

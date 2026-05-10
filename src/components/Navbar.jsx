@@ -3,9 +3,9 @@ import { user } from '../data/user'
 
 const links = [
   { href: '#home', label: 'Home' },
-  { href: '#how-i-work', label: 'How I Work' },
-  { href: '#strategic-fit', label: 'Strategic Fit' },
-  { href: '#case-studies', label: 'Case Studies' },
+  { href: '#how-i-work', label: 'About' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#insights', label: 'Insights' },
   { href: '#contact', label: 'Contact' },
 ]
 
