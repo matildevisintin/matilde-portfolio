@@ -1,5 +1,6 @@
 import { CaseStudiesSection } from './components/CaseStudiesSection'
 import { ContactSection } from './components/ContactSection'
+import { CredibilityStrip } from './components/CredibilityStrip'
 import { Footer } from './components/Footer'
 import { HeroSection } from './components/HeroSection'
 import { HowIWorkSection } from './components/HowIWorkSection'
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <main>
         <HeroSection />
+        <CredibilityStrip />
         <HowIWorkSection />
         <StrategicFitSection />
         <CaseStudiesSection />
