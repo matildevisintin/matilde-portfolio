@@ -1,17 +1,13 @@
 import { useCallback, useState } from 'react'
 import { Reveal } from './Reveal'
 
-const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT?.trim()
-const displayEmail =
-  import.meta.env.VITE_CONTACT_EMAIL?.trim() || 'matilde.visintin@gmail.com'
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT?.trim() || 'https://formspree.io/f/xyzkpvwr' // Placeholder o endpoint reale
+const displayEmail = 'matilde.visintin@gmail.com'
 
 async function submitToFormspree(e) {
   e.preventDefault()
   const form = e.currentTarget
-  if (!FORMSPREE_ENDPOINT) {
-    return { ok: false, error: 'missing_endpoint' }
-  }
-
+  
   const formData = new FormData(form)
   formData.append(
     '_subject',
@@ -32,7 +28,6 @@ async function submitToFormspree(e) {
   return {
     ok: false,
     error: 'request_failed',
-    details: Array.isArray(data.errors) ? data.errors : [],
   }
 }
 
@@ -47,83 +42,113 @@ export function ContactSection() {
 
     if (result.ok) {
       setStatus('success')
-      setFeedback('Sent. I will reply from matilde.visintin@gmail.com when I can.')
+      setFeedback('Message sent successfully! I will get back to you soon.')
       return
     }
 
     setStatus('error')
-    setFeedback(result.error === 'missing_endpoint' 
-      ? 'Formspree endpoint is not configured.' 
-      : 'Submission failed. Please try again.')
+    setFeedback('Submission failed. Please try again or email me directly.')
   }, [])
 
   const busy = status === 'submitting'
 
   return (
-    <section id="contact" className="px-5 py-24 md:py-32 bg-[var(--color-surface)]">
+    <section id="contact" className="px-6 py-32 md:py-48 bg-[var(--color-surface)]">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
+        <div className="grid gap-20 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-ink)]">
-              Contact & Collaboration
+            <p className="text-[12px] font-bold uppercase tracking-[0.25em] text-[var(--color-ink)]">
+              Get in Touch
             </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--color-ink)] md:text-4xl">
+            <h2 className="mt-8 text-4xl font-bold tracking-tight text-[var(--color-ink)] md:text-6xl">
               Ready to bridge the gap?
             </h2>
-            <p className="mt-6 text-[15px] leading-relaxed opacity-80">
-              Whether you are looking for a technical partner for circular economy projects or a proactive materials engineer to join your team, I am always open to strategic discussions.
+            <p className="mt-10 text-lg leading-relaxed text-[var(--color-ink)] opacity-80 md:text-xl">
+              Whether you are looking for a technical partner for circular economy projects or a proactive materials engineer, I am always open to strategic discussions.
             </p>
+            
+            <div className="mt-16 space-y-8">
+              <a href={`mailto:${displayEmail}`} className="group flex items-center gap-6 text-[var(--color-ink)] transition-all hover:-translate-y-1">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-[var(--color-border)] bg-[var(--color-surface-card)] text-2xl transition-colors group-hover:border-[var(--color-ink)]">
+                  ✉
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest opacity-50">Email</p>
+                  <p className="text-lg font-bold">{displayEmail}</p>
+                </div>
+              </a>
+              
+              <a href="https://linkedin.com/in/matildevisintin" target="_blank" rel="noreferrer" className="group flex items-center gap-6 text-[var(--color-ink)] transition-all hover:-translate-y-1">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-[var(--color-border)] bg-[var(--color-surface-card)] text-2xl transition-colors group-hover:border-[var(--color-ink)]">
+                  in
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest opacity-50">LinkedIn</p>
+                  <p className="text-lg font-bold">matildevisintin</p>
+                </div>
+              </a>
+
+              <a href="https://github.com/matildevisintin" target="_blank" rel="noreferrer" className="group flex items-center gap-6 text-[var(--color-ink)] transition-all hover:-translate-y-1">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-[var(--color-border)] bg-[var(--color-surface-card)] text-2xl transition-colors group-hover:border-[var(--color-ink)]">
+                  gh
+                </div>
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest opacity-50">GitHub</p>
+                  <p className="text-lg font-bold">matildevisintin</p>
+                </div>
+              </a>
+            </div>
           </Reveal>
 
           <Reveal className="lg:col-span-7" delayMs={100}>
             <form
-              className="relative rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-card)] p-8 shadow-sm md:p-10"
+              className="relative rounded-3xl border-2 border-[var(--color-border)] bg-[var(--color-surface-card)] p-10 shadow-xl md:p-14"
               onSubmit={onSubmit}
             >
               {feedback && (
-                <p className={`mb-6 p-4 rounded-lg text-sm font-semibold ${status === 'success' ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
+                <div className={`mb-10 p-6 rounded-2xl text-[15px] font-bold ${status === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
                   {feedback}
-                </p>
+                </div>
               )}
 
-              <div className="grid gap-6">
+              <div className="grid gap-8">
                 <label className="block">
-                  <span className="text-xs font-semibold uppercase tracking-wider opacity-60">Name</span>
+                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-ink)] opacity-60">Your Name</span>
                   <input
                     name="name"
                     type="text"
                     required
                     disabled={busy}
-                    className="mt-2 w-full rounded-xl border border-[var(--color-border)] bg-transparent px-4 py-3 text-[15px] outline-none focus:border-[var(--color-ink)] transition-colors"
-                    placeholder="Your Name"
+                    className="mt-4 w-full rounded-2xl border-2 border-[var(--color-border)] bg-transparent px-6 py-4 text-lg font-medium outline-none focus:border-[var(--color-ink)] transition-colors"
+                    placeholder="Jane Doe"
                   />
                 </label>
                 <label className="block">
-                  <span className="text-xs font-semibold uppercase tracking-wider opacity-60">Email</span>
+                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-ink)] opacity-60">Email Address</span>
                   <input
                     name="email"
                     type="email"
                     required
                     disabled={busy}
-                    className="mt-2 w-full rounded-xl border border-[var(--color-border)] bg-transparent px-4 py-3 text-[15px] outline-none focus:border-[var(--color-ink)] transition-colors"
-                    placeholder="your@email.com"
+                    className="mt-4 w-full rounded-2xl border-2 border-[var(--color-border)] bg-transparent px-6 py-4 text-lg font-medium outline-none focus:border-[var(--color-ink)] transition-colors"
+                    placeholder="jane@example.com"
                   />
                 </label>
                 <label className="block">
-                  <span className="text-xs font-semibold uppercase tracking-wider opacity-60">Message</span>
+                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-ink)] opacity-60">Message</span>
                   <textarea
                     name="message"
-                    rows={4}
+                    rows={5}
                     required
                     disabled={busy}
-                    className="mt-2 w-full rounded-xl border border-[var(--color-border)] bg-transparent px-4 py-3 text-[15px] outline-none focus:border-[var(--color-ink)] transition-colors resize-none"
-                    placeholder="How can I help?"
+                    className="mt-4 w-full rounded-2xl border-2 border-[var(--color-border)] bg-transparent px-6 py-4 text-lg font-medium outline-none focus:border-[var(--color-ink)] transition-colors resize-none"
+                    placeholder="How can we collaborate?"
                   />
                 </label>
                 <button
                   type="submit"
                   disabled={busy}
-                  className="mt-2 inline-flex min-h-11 items-center justify-center rounded-full bg-[var(--color-ink)] px-10 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+                  className="mt-4 inline-flex min-h-[64px] items-center justify-center rounded-full bg-[var(--color-ink)] px-12 text-lg font-bold text-white transition-all duration-300 hover:opacity-90 hover:-translate-y-1 active:translate-y-0 shadow-lg disabled:opacity-50"
                 >
                   {busy ? 'Sending...' : 'Send Message'}
                 </button>

@@ -1,41 +1,46 @@
-import { quickFacts } from '../data/quickFacts'
 import { user } from '../data/user'
-
-const heroFacts = quickFacts.filter((fact) => fact?.value).slice(0, 3)
+import { Reveal } from './Reveal'
 
 export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden border-b border-[var(--color-border)] px-5 pb-28 pt-14 md:pb-36 md:pt-20"
+      className="relative overflow-hidden border-b border-[var(--color-border)] px-6 pb-24 pt-20 md:pb-32 md:pt-28"
     >
+      {/* Background Aura */}
+      <div className="aura-bg" />
+      
       <div className="relative mx-auto max-w-6xl">
-        <p className="hero-fade text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--color-ink)]">
-          DTU Alumna · Materials Engineering · Circular Transition
-        </p>
-        <h1 className="hero-fade hero-fade-delay-1 mt-8 max-w-4xl text-3xl font-semibold leading-[1.12] tracking-tight text-[var(--color-ink)] md:text-5xl lg:text-[3.35rem]">
-          {user.name}
-        </h1>
-        <p className="hero-fade hero-fade-delay-2 mt-6 max-w-3xl text-lg font-normal leading-relaxed text-[var(--color-ink)] md:text-xl opacity-90">
-          {user.bioShort}
-        </p>
+        <Reveal>
+          <p className="text-[11px] font-bold uppercase tracking-[0.35em] text-[var(--color-ink)] opacity-40">
+            International Materials Engineering · Circular Innovation
+          </p>
+          <h1 className="mt-6 max-w-5xl text-4xl font-bold leading-[1.1] tracking-tight text-[var(--color-ink)] sm:text-5xl md:text-6xl lg:text-[4.5rem]">
+            {user.name}
+          </h1>
+          <div className="mt-8 max-w-3xl">
+            <p className="text-lg font-medium leading-relaxed text-[var(--color-ink-muted)] md:text-xl lg:text-[1.35rem] opacity-80">
+              {user.bioShort}
+            </p>
+          </div>
 
-        <div className="hero-fade hero-fade-delay-3 mt-10 flex flex-wrap gap-4">
-          <a
-            href="#contact"
-            className="inline-flex min-h-11 items-center justify-center rounded-full bg-[var(--color-ink)] px-8 text-sm font-semibold text-white transition-[transform,opacity] duration-300 hover:opacity-90 hover:-translate-y-0.5 active:translate-y-0"
-          >
-            Get In Touch
-          </a>
-          <a
-            href={user.cvUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-[var(--color-border)] bg-transparent px-8 text-sm font-semibold text-[var(--color-ink)] transition-all duration-300 hover:bg-[var(--color-ink)] hover:text-white hover:-translate-y-0.5 active:translate-y-0"
-          >
-            View Resume
-          </a>
-        </div>
+          <div className="mt-14 flex flex-wrap gap-6">
+            <a
+              href="#contact"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-[var(--color-ink)] px-10 text-[14px] font-bold text-white transition-all duration-300 hover:opacity-90 hover:-translate-y-1 active:translate-y-0 shadow-lg"
+            >
+              Get In Touch
+            </a>
+            <a
+              href="/cv-matilde-visintin.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[52px] items-center justify-center rounded-full border-2 border-[var(--color-ink)] bg-transparent px-10 text-[14px] font-bold text-[var(--color-ink)] transition-all duration-300 hover:bg-[var(--color-ink)] hover:text-white hover:-translate-y-1 active:translate-y-0"
+            >
+              View Resume
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

@@ -5,7 +5,7 @@ import { HeroSection } from './components/HeroSection'
 import { ValuePropositionSection } from './components/ValuePropositionSection'
 import { LearningSection } from './components/LearningSection'
 import { InsightsSection } from './components/InsightsSection'
-import { Navbar } from './components/Navbar'
+import Navbar from './components/Navbar'
 
 function App() {
   return (

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { user } from '../data/user'
 
 const links = [
   { href: '#home', label: 'Home' },
@@ -8,15 +7,13 @@ const links = [
   { href: '#insights', label: 'Insights' },
 ]
 
-export function Navbar() {
+export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
-    }
+    return () => { document.body.style.overflow = '' }
   }, [open])
 
   useEffect(() => {
@@ -25,7 +22,7 @@ export function Navbar() {
       .map((id) => document.getElementById(id))
       .filter(Boolean)
 
-    if (!sections.length) return undefined
+    if (!sections.length) return
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -37,10 +34,7 @@ export function Navbar() {
           setActiveSection(visible[0].target.id)
         }
       },
-      {
-        rootMargin: '-35% 0px -55% 0px',
-        threshold: [0.15, 0.35, 0.6],
-      },
+      { rootMargin: '-35% 0px -55% 0px', threshold: [0.15, 0.35, 0.6] }
     )
 
     sections.forEach((section) => observer.observe(section))
@@ -49,28 +43,29 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-surface)]/90 backdrop-blur-md">
-      <nav
-        className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 md:py-5"
-        aria-label="Primary navigation"
-      >
-        <a
-          href="#home"
-          className="min-w-0 truncate text-[14px] font-semibold tracking-tight text-[var(--color-ink)] md:text-[15px]"
-          onClick={() => setOpen(false)}
-        >
-          <span className="font-bold">MATILDE</span> VISINTIN
+      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 md:py-5">
+        
+        {/* LOGO */}
+        <a href="#home" className="flex flex-col min-w-0" onClick={() => setOpen(false)}>
+          <span className="text-[14px] font-bold tracking-tight text-[var(--color-ink)] md:text-[16px]">
+            MATILDE VISINTIN
+          </span>
+          <span className="text-[9px] uppercase tracking-[0.15em] text-[var(--color-ink)]/70 hidden sm:block">
+            Materials Engineer
+          </span>
         </a>
 
+        {/* DESKTOP MENU */}
         <div className="hidden items-center gap-8 lg:flex">
-          <ul className="flex flex-wrap justify-end gap-x-8 gap-y-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--color-ink)]">
+          <ul className="flex items-center gap-x-8 text-[11px] font-bold uppercase tracking-[0.15em]">
             {links.map(({ href, label }) => {
               const isActive = activeSection === href.replace('#', '')
               return (
                 <li key={href}>
                   <a
                     href={href}
-                    className={`transition-colors duration-300 hover:opacity-70 ${
-                      isActive ? 'text-[var(--color-ink)] border-b border-[var(--color-ink)]' : 'opacity-60'
+                    className={`transition-all duration-300 hover:text-[var(--color-ink)] hover:-translate-y-0.5 block ${
+                      isActive ? 'text-[var(--color-ink)]' : 'text-[var(--color-ink)]/50'
                     }`}
                   >
                     {label}
@@ -80,127 +75,63 @@ export function Navbar() {
             })}
             <li>
               <a
-                href={user.cvUrl}
+                href="/cv-matilde-visintin.pdf"
                 target="_blank"
-                rel="noreferrer"
-                className="opacity-60 transition-colors duration-300 hover:opacity-100"
+                rel="noopener noreferrer"
+                className="text-[var(--color-ink)]/50 transition-all duration-300 hover:text-[var(--color-ink)] hover:-translate-y-0.5 block"
               >
                 Resume
               </a>
             </li>
-          </ul>
-        </div>
-
-        <button
-          type="button"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)] text-[var(--color-ink)] lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((o) => !o)}
-        >
-          <span className="sr-only">Open menu</span>
-          <span aria-hidden>{open ? '✕' : '☰'}</span>
-        </button>
-      </nav>
-
-      {open ? (
-        <div
-          id="mobile-menu"
-          className="border-t border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-8 lg:hidden"
-        >
-          <ul className="flex flex-col gap-5 text-sm font-semibold uppercase tracking-wider text-[var(--color-ink)]">
-            {links.map(({ href, label }) => {
-              const isActive = activeSection === href.replace('#', '')
-              return (
-                <li key={href}>
-                  <a
-                    href={href}
-                    className={`block py-1 ${isActive ? 'font-bold' : 'opacity-70'}`}
-                    onClick={() => setOpen(false)}
-                  >
-                    {label}
-                  </a>
-                </li>
-              )
-            })}
-            <li>
-              <a
-                href={user.cvUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="block py-1 opacity-70"
-                onClick={() => setOpen(false)}
-              >
-                Resume
-              </a>
-            </li>
-          </ul>
-        </div>
-      ) : null}
-    </header>
-  )
-}
-
-        <button
-          type="button"
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[var(--color-border)] text-[var(--color-muted)] lg:hidden"
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((o) => !o)}
-        >
-          <span className="sr-only">Open menu</span>
-          <span aria-hidden className="text-xl">{open ? '✕' : '☰'}</span>
-        </button>
-      </nav>
-
-      {open ? (
-        <div
-          id="mobile-menu"
-          className="border-t border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-10 lg:hidden"
-        >
-          <ul className="flex flex-col gap-6 text-[12px] font-bold uppercase tracking-[0.2em] text-[var(--color-ink)]">
-            {links.map(({ href, label }) => {
-              if (label === 'Resume') {
-                return (
-                  <li key={href}>
-                    <a
-                      href={user.cvUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      download
-                      className="block py-2"
-                      onClick={() => setOpen(false)}
-                    >
-                      {label}
-                    </a>
-                  </li>
-                )
-              }
-              const isActive = activeSection === href.replace('#', '')
-              return (
-                <li key={href}>
-                  <a
-                    href={href}
-                    className={`block py-2 ${isActive ? 'text-[var(--color-accent)]' : ''}`}
-                    onClick={() => setOpen(false)}
-                  >
-                    {label}
-                  </a>
-                </li>
-              )
-            })}
-            <li className="pt-4">
+            <li className="ml-2">
               <a
                 href="#contact"
-                className="inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-[var(--color-accent)] px-6 text-[12px] font-bold uppercase tracking-[0.2em] text-white"
-                onClick={() => setOpen(false)}
+                className="inline-flex h-9 items-center justify-center rounded-full border border-[var(--color-ink)] px-5 text-[10px] font-bold uppercase tracking-widest text-[var(--color-ink)] transition-all duration-300 hover:bg-[var(--color-ink)] hover:text-white hover:-translate-y-0.5"
               >
                 Get In Touch
               </a>
             </li>
           </ul>
         </div>
-      ) : null}
+
+        {/* MOBILE BUTTON */}
+        <button
+          type="button"
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-[var(--color-border)] text-[var(--color-ink)] lg:hidden"
+          onClick={() => setOpen((o) => !o)}
+        >
+          <span className="text-xl">{open ? '✕' : '☰'}</span>
+        </button>
+      </nav>
+
+      {/* MOBILE MENU PANEL */}
+      {open && (
+        <div className="border-t border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-8 lg:hidden h-[calc(100vh-80px)] overflow-y-auto">
+          <ul className="flex flex-col gap-6 text-sm font-bold uppercase tracking-[0.12em] text-[var(--color-ink)]">
+            {links.map(({ href, label }) => (
+              <li key={href}>
+                <a href={href} onClick={() => setOpen(false)} className="block py-1">
+                  {label}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a href="/cv-matilde-visintin.pdf" target="_blank" onClick={() => setOpen(false)} className="block py-1">
+                Resume
+              </a>
+            </li>
+            <li className="pt-4">
+              <a
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="inline-flex h-11 w-full items-center justify-center rounded-full border-2 border-[var(--color-ink)] px-6 text-xs font-bold uppercase tracking-widest text-[var(--color-ink)]"
+              >
+                Get In Touch
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   )
 }
