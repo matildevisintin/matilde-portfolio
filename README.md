@@ -47,9 +47,21 @@ export default defineConfig({
 
 Ricostruisci con `npm run build` e pubblica il contenuto di `dist`.
 
+### Formspree (modulo contatti)
+
+1. Crea un form su [Formspree](https://formspree.io) e imposta la notifica verso **`matilde.visintin@gmail.com`**.
+2. Copia l’endpoint tipo `https://formspree.io/f/xxxxxxx`.
+3. Crea un file **`.env`** in root (vedi **`.env.example`**) con:
+
+   `VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/xxxxxxx`
+
+4. Riavvia `npm run dev`. In produzione (Vercel/Netlify/GitHub Actions) aggiungi la stessa variabile d’ambiente.
+
 ## Personalizzazione
 
-- Email (opzionale via env): `VITE_CONTACT_EMAIL` in `.env` — fallback in `ContactSection.jsx`
+- Email mostrata nei link: default `matilde.visintin@gmail.com`; override opzionale con `VITE_CONTACT_EMAIL` in `.env`
+
+- Endpoint Formspree: `VITE_FORMSPREE_ENDPOINT` in `.env`
 - Link social: `src/components/ContactSection.jsx`
 - Narrativa strategica / hero: `src/components/HeroSection.jsx`
 - Modalità operative: `src/components/HowIWorkSection.jsx`
