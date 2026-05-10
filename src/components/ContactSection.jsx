@@ -87,16 +87,6 @@ export function ContactSection() {
                   <p className="text-lg font-bold">matildevisintin</p>
                 </div>
               </a>
-
-              <a href="https://github.com/matildevisintin" target="_blank" rel="noreferrer" className="group flex items-center gap-6 text-[var(--color-ink)] transition-all hover:-translate-y-1">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-[var(--color-border)] bg-[var(--color-surface-card)] text-2xl transition-colors group-hover:border-[var(--color-ink)]">
-                  gh
-                </div>
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-widest opacity-50">GitHub</p>
-                  <p className="text-lg font-bold">matildevisintin</p>
-                </div>
-              </a>
             </div>
           </Reveal>
 
