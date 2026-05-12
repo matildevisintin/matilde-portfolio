@@ -75,7 +75,7 @@ export default function Navbar() {
             })}
             <li>
               <a
-                href="/cv-matilde-visintin.pdf"
+                href="/CV_Visintin_Matilde.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--color-ink)]/50 transition-all duration-300 hover:text-[var(--color-ink)] hover:-translate-y-0.5 block"
@@ -116,7 +116,7 @@ export default function Navbar() {
               </li>
             ))}
             <li>
-              <a href="/cv-matilde-visintin.pdf" target="_blank" onClick={() => setOpen(false)} className="block py-1">
+              <a href="/CV_Visintin_Matilde.pdf" target="_blank" onClick={() => setOpen(false)} className="block py-1">
                 Resume
               </a>
             </li>

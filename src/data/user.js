@@ -11,7 +11,7 @@ export const user = {
   bioShort:
     'I engineer the end-of-life of complex materials by bridging scientific research and digital prototyping. I lead companies toward a circular transition that is both technically rigorous and economically viable.',
   bioLong:
-    'I am a Materials Engineering student completing my academic journey between the University of Trieste and the Technical University of Denmark (DTU). My resilience and high workload management skills are proven by years of continuous work in catering and academic tutoring while maintaining academic excellence. I combine materials-engineering rigor with a proactive attitude to translate complex waste streams into scalable circular opportunities.',
+    'I am a Materials Engineering student at Denmark Technical University (DTU) with a professional discipline built on the ground. My resilience was forged through five years of daily commuting and balancing academic excellence with demanding roles in the service sector. This taught me to turn high-pressure environments and complex schedules into opportunities for focus and grit. I apply this same mindset to engineering: translating complex technical challenges into scalable, circular industrial solutions.',
   languages: ['Italian (native)', 'English (C1)'],
   valueProp: 'A future-oriented mindset combining technical rigor with a proactive approach to circular innovation. I believe that sustainable materials are the foundation of a resilient global economy.',
 }

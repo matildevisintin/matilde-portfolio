@@ -10,7 +10,7 @@ export function LearningSection() {
             Continuous Growth
           </p>
           <h2 className="mt-6 text-4xl font-bold tracking-tight text-[var(--color-ink)] md:text-5xl">
-            Focus Areas
+            Current Focus Areas
           </h2>
         </Reveal>
 

@@ -5,7 +5,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden border-b border-[var(--color-border)] px-6 pb-20 pt-12 md:pb-24 md:pt-16"
+      className="relative overflow-hidden border-b border-[var(--color-border)] px-6 pb-20 pt-12 md:pb-24 md:pt-16 bg-grain"
     >
       {/* Background Aura */}
       <div className="aura-bg" />
@@ -20,12 +20,12 @@ export function HeroSection() {
             {user.name}
           </h1>
 
-          <div className="mt-10 max-w-3xl">
-            {/* UVP: Reduced font sizes as requested */}
+          <div className="mt-10 max-w-5xl">
             <h2 className="text-xl font-medium leading-[1.4] text-[var(--color-ink)] md:text-2xl lg:text-[1.75rem] italic">
-              Transforming composite waste into strategic resources through technical grit and material innovation.
+              Transforming composite waste into strategic resources <br className="hidden lg:block" />
+              through technical grit and material innovation.
             </h2>
-            <p className="mt-6 text-base font-medium leading-relaxed text-[var(--color-ink-muted)] md:text-lg lg:text-xl opacity-80">
+            <p className="mt-6 text-base font-medium leading-relaxed text-[var(--color-ink-muted)] md:text-lg lg:text-xl opacity-80 whitespace-nowrap overflow-visible">
               A hands-on approach to solving the industrial challenges of the 2030 circular economy.
             </p>
           </div>
@@ -38,7 +38,7 @@ export function HeroSection() {
               Get In Touch
             </a>
             <a
-              href="/cv-matilde-visintin.pdf"
+              href="/CV_Visintin_Matilde.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex min-h-[52px] items-center justify-center rounded-full border-2 border-[var(--color-ink)] bg-transparent px-10 text-[14px] font-bold text-[var(--color-ink)] transition-all duration-300 hover:bg-[var(--color-ink)] hover:text-white hover:-translate-y-1 active:translate-y-0"

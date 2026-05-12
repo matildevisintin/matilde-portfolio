@@ -5,20 +5,20 @@ export function ValuePropositionSection() {
   const pillars = [
     {
       title: "English-First Communication",
-      content: "C1 proficiency with experience in international research environments. Capable of translating technical findings into business insights."
+      content: "C1 proficiency with experience in international research environments. Capable of translating technical findings into clear, actionable business insights. I am comfortable leading discussions in multicultural contexts, bridging scientific rigor with industrial needs."
     },
     {
-      title: "Disciplined & Resilient",
-      content: "Proven work ethic shaped by academic rigor. Expert in managing multiple priorities and delivering high-quality output."
+      title: "High Workload Management",
+      content: "Proven resilience and multitasking abilities forged through years of continuous professional roles in high-pressure sectors. Expert at delivering high-quality output under tight academic and industrial deadlines."
     },
     {
       title: "Technical Ambition",
-      content: "Proactive attitude towards innovation. Focused on high-potential areas like wind energy and circular material systems."
+      content: "A highly proactive approach to R&D, currently focused on wind turbine blade recycling and advanced composites. Aiming to bridge the gap between material science and scalable circular economy transitions."
     }
   ];
 
   return (
-    <section id="about" className="border-b border-[var(--color-border)] bg-[var(--color-surface-elevated)] px-6 py-24 md:py-32">
+    <section id="about" className="relative border-b border-[var(--color-border)] bg-[var(--color-surface-elevated)] px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
         {/* Header Section */}
         <Reveal>
@@ -30,51 +30,49 @@ export function ValuePropositionSection() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-12">
-          {/* Left Column: Pillars */}
-          <div className="lg:col-span-7 grid gap-8 sm:grid-cols-3 lg:grid-cols-1">
+        <div className="mt-16 grid gap-12 lg:grid-cols-12 items-stretch">
+          {/* Left Column: Photo */}
+          <div className="lg:col-span-5 flex items-center justify-center">
+            <Reveal delayMs={100} className="w-full">
+              <div className="relative mx-auto w-full max-w-[340px] aspect-[4/5] overflow-hidden rounded-2xl border border-[var(--color-border)] shadow-xl">
+                <img 
+                  src="/matilde-profile.webp" 
+                  alt="Matilde Visintin" 
+                  fetchpriority="high"
+                  loading="eager"
+                  style={{ imageRendering: 'auto', WebkitFontSmoothing: 'antialiased' }}
+                  className="h-full w-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1200&h=1500&auto=format&fit=crop";
+                  }}
+                />
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right Column: Pillars, aligned with photo */}
+          <div className="lg:col-span-7 flex flex-col justify-between py-2">
             {pillars.map((pillar, index) => (
-              <Reveal key={index} delayMs={index * 100}>
+              <Reveal key={index} delayMs={index * 100 + 200}>
                 <div className="group border-l-2 border-[var(--color-ink)]/20 pl-8 transition-all duration-300 hover:border-[var(--color-ink)]">
                   <h4 className="text-[14px] font-black uppercase tracking-widest text-[var(--color-ink)]">
                     {pillar.title}
                   </h4>
-                  <p className="mt-4 text-[15px] leading-relaxed text-[var(--color-ink-muted)] font-medium">
+                  <p className="mt-3 text-[15px] leading-relaxed text-[var(--color-ink-muted)] font-medium">
                     {pillar.content}
                   </p>
                 </div>
               </Reveal>
             ))}
           </div>
-
-          {/* Right Column: Bio Quote */}
-          <Reveal className="lg:col-span-5" delayMs={200}>
-            <div className="h-full rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-10 shadow-sm flex items-center">
-              <p className="text-lg leading-relaxed text-[var(--color-ink)] font-medium md:text-xl italic opacity-80">
-                "{user.bioLong}"
-              </p>
-            </div>
-          </Reveal>
         </div>
 
-        {/* Full-width Foundation Block */}
-        <Reveal className="mt-16" delayMs={300}>
-          <div className="rounded-3xl border-2 border-[var(--color-ink)]/10 bg-[var(--color-surface-card)] p-10 md:p-14 shadow-sm">
-            <div className="flex flex-col md:flex-row gap-10 md:items-center">
-              <div className="shrink-0">
-                <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-[var(--color-ink)] opacity-30">
-                  Foundation
-                </h4>
-              </div>
-              <div className="flex-1 space-y-6">
-                <p className="text-xl leading-relaxed text-[var(--color-ink-muted)] font-medium md:text-2xl">
-                  My professional discipline is built on the ground. I apply the same grit to technical engineering that I used to manage complex dynamics in the service sector and academic tutoring while maintaining excellence.
-                </p>
-                <p className="text-lg font-bold text-[var(--color-ink)] uppercase tracking-wider">
-                  This is my foundation for leading industrial transitions.
-                </p>
-              </div>
-            </div>
+        {/* Full-width Bio Banner: Quoted, Italic, Wide and Short */}
+        <Reveal className="mt-20" delayMs={500}>
+          <div className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-10 md:p-12 shadow-sm text-center">
+            <p className="text-lg leading-relaxed text-[var(--color-ink)] font-medium md:text-xl italic opacity-90 max-w-5xl mx-auto">
+              "{user.bioLong}"
+            </p>
           </div>
         </Reveal>
       </div>

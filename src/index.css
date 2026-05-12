@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-sans:
-    'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif;
 
   /* Technical Elegance Palette */
   --color-surface: #FFFDE7; /* Light Pastel Yellow */
@@ -37,10 +37,85 @@
   pointer-events: none;
 }
 
+/* Infallible Materic Grain Effect */
+body {
+  background-color: #FFFDE7;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 9999; /* Ensure it stays on top of everything */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+/* Engineering Watermarks */
+.watermark-fiber {
+  position: absolute;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 L60 10 M0 30 L60 30 M0 50 L60 50 M10 0 L10 60 M30 0 L30 60 M50 0 L50 60' stroke='%236200EA' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Custom Thin Purple Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-ink);
+  border-radius: 10px;
+  opacity: 0.3;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-strong);
+}
+
+/* Fade Out Overlay */
+.fade-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to top, var(--color-surface-card), transparent);
+  pointer-events: none;
+  z-index: 10;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;
   color-scheme: light;
+}
+
+/* Global Image Optimization */
+img {
+  image-rendering: auto; /* Changed from crisp-edges for better high-res rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-interpolation-mode: bicubic;
+  font-style: italic;
+  vertical-align: middle;
+  shape-margin: 0.75rem;
+  max-width: 100%;
+  height: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

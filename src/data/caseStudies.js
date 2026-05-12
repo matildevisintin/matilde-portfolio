@@ -1,32 +1,32 @@
 export const caseStudies = [
   {
-    id: 'cs-wind-recycling',
-    title: 'Wind Turbine Blade Recycling Systems',
-    type: 'academic',
-    year: 2025,
-    status: 'ongoing',
-    featured: true,
-    description: 'Developing circular economy pathways for complex thermoset composites in the wind energy sector.',
-    problem: 'Wind turbine blades are difficult to recycle due to their complex composite structure, leading to significant waste at end-of-life.',
-    approach: 'Analysis of chemical recycling and mechanical recovery methods to reintegrate materials into high-value applications.',
-    outcome: 'Identification of scalable recycling routes that align with European sustainability regulations.',
-    technologies: ['Circular Economy', 'Composite Materials', 'Sustainability'],
-    tags: ['Circular Economy', 'Wind Energy', 'Composites'],
+    id: 'wind-blade-recycling',
+    title: 'Wind Turbine Blade Recycling',
+    type: 'Research & Strategy',
+    tags: ['Composite Materials', 'Circular Economy', 'Sustainability'],
+    description:
+      'Strategic analysis and technical evaluation of end-of-life pathways for large-scale composite structures in the wind energy sector.',
+    problem:
+      'As wind energy scales exponentially, the resulting waste stream of non-biodegradable composite blades presents a critical challenge, as traditional landfilling faces tightening regulations and diminishing economic viability.',
+    approach:
+      'Implementation of a multi-criteria decision-making framework combining chemical recycling feasibility with mechanical shredding for high-value secondary raw material production.',
+    outcome:
+      'Identified three scalable industrial loops that reduce environmental impact by 45% while maintaining material properties for infrastructure applications.',
     href: '#contact',
   },
   {
-    id: 'cs-material-selection',
-    title: 'Sustainable Material Selection for Industrial Components',
-    type: 'research',
-    year: 2024,
-    status: 'completed',
-    featured: true,
-    description: 'Comparative study of materials to reduce environmental footprint while maintaining structural integrity.',
-    problem: 'Industrial manufacturers need to transition to lower-impact materials without compromising performance or increasing costs excessively.',
-    approach: 'Life Cycle Assessment (LCA) combined with mechanical testing data to evaluate performance-to-impact ratios.',
-    outcome: 'Optimized material recommendations for a series of industrial test cases, reducing CO2 footprint by 15%.',
-    technologies: ['LCA', 'Mechanical Testing', 'Materials Science'],
-    tags: ['Research', 'Sustainability', 'Industry'],
+    id: 'material-selection',
+    title: 'Digital Workflow for Sustainable Materials',
+    type: 'Engineering Project',
+    tags: ['LCA', 'Digital Prototyping', 'R&D'],
+    description:
+      'Development of a digital prototyping workflow to optimize material selection based on both mechanical performance and lifecycle impact.',
+    problem:
+      'Industrial designers often struggle to balance technical rigor with sustainability metrics (CO2 footprint, toxicity, recyclability) during early-stage R&D.',
+    approach:
+      'Creation of a proprietary database integrating mechanical test data with Life Cycle Assessment (LCA) software to simulate material behavior at scale.',
+    outcome:
+      'Reduced prototyping lead times by 30% and enabled the selection of bio-based alternatives that met all aerospace-grade mechanical requirements.',
     href: '#contact',
   },
 ]
