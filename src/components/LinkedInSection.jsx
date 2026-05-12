@@ -21,7 +21,7 @@ export default function LinkedInSection() {
                 <div className="h-[600px] overflow-y-auto custom-scrollbar rounded-xl bg-white">
                   <iframe 
                     src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7446925180079104000" 
-                    height="1552" 
+                    height="1540" 
                     width="504" 
                     frameBorder="0" 
                     allowFullScreen 
@@ -42,7 +42,7 @@ export default function LinkedInSection() {
                 <div className="h-[600px] overflow-y-auto custom-scrollbar rounded-xl bg-white">
                   <iframe 
                     src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7450191933433368576" 
-                    height="1636" 
+                    height="1620" 
                     width="504" 
                     frameBorder="0" 
                     allowFullScreen 
