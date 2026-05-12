@@ -1,8 +1,8 @@
 import { Reveal } from './Reveal'
 
-export default function LinkedInSection() {
+export function LinkedInSection() {
   return (
-    <section id="linkedin" className="relative border-b border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-24 md:py-32 bg-grain overflow-hidden">
+    <section id="linkedin" className="relative border-b border-[var(--color-border)] bg-[var(--color-surface-elevated)] px-6 py-24 md:py-32 bg-grain overflow-hidden">
       <div className="relative mx-auto max-w-6xl">
         <Reveal>
           <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[var(--color-ink)] opacity-40">
@@ -21,7 +21,7 @@ export default function LinkedInSection() {
                 <div className="h-[600px] overflow-y-auto custom-scrollbar rounded-xl bg-white">
                   <iframe 
                     src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7446925180079104000" 
-                    height="1540" 
+                    height="1700" 
                     width="504" 
                     frameBorder="0" 
                     allowFullScreen 
@@ -42,7 +42,7 @@ export default function LinkedInSection() {
                 <div className="h-[600px] overflow-y-auto custom-scrollbar rounded-xl bg-white">
                   <iframe 
                     src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7450191933433368576" 
-                    height="1620" 
+                    height="1800" 
                     width="504" 
                     frameBorder="0" 
                     allowFullScreen 

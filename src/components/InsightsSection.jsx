@@ -1,8 +1,9 @@
-import { Reveal } from './Reveal'
+import React from 'react';
+import { Reveal } from './Reveal';
 
-export function InsightsSection() {
+export function InsightsSection() { 
   return (
-    <section id="insights" className="relative border-b border-[var(--color-border)] bg-[var(--color-surface-elevated)] px-6 py-24 md:py-32 bg-grain overflow-hidden">
+    <section id="insights" className="relative border-b border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-24 md:py-32 overflow-hidden">
       <div className="watermark-fiber right-10 top-20 w-64 h-64 opacity-5 rotate-45" />
       
       <div className="relative mx-auto max-w-6xl">
@@ -13,6 +14,10 @@ export function InsightsSection() {
           <h2 className="mt-6 text-4xl font-bold tracking-tight text-[var(--color-ink)] md:text-5xl">
             Technical Insights
           </h2>
+          {/* Testo che chiarisce che sono risorse esterne */}
+  <p className="mt-6 max-w-2xl text-[16px] leading-relaxed text-[var(--color-ink-muted)]">
+    Explore the complexities of composite recycling through these technical resources, selected to provide a deeper understanding of circular systems.
+  </p>
         </Reveal>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2">
@@ -84,3 +89,5 @@ export function InsightsSection() {
     </section>
   )
 }
+
+

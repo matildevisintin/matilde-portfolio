@@ -1,8 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 
-/**
- * Fade-in on scroll; rispetta prefers-reduced-motion.
- */
 export function Reveal({ children, className = '', delayMs = 0 }) {
   const ref = useRef(null)
   const [visible, setVisible] = useState(false)

@@ -5,7 +5,7 @@ export function CaseStudiesSection() {
   return (
     <section
       id="projects"
-      className="relative border-b border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-24 md:py-32 bg-grain overflow-hidden"
+      className="relative border-b border-[var(--color-border)] bg-[var(--color-surface-elevated)] px-6 py-24 md:py-32 bg-grain overflow-hidden"
     >
       <div className="watermark-fiber -left-10 bottom-0 w-80 h-80 opacity-5 -rotate-12" />
       
