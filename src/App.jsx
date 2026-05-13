@@ -6,7 +6,7 @@ import { ValuePropositionSection } from './components/ValuePropositionSection'
 import { LearningSection } from './components/LearningSection'
 import { InsightsSection } from './components/InsightsSection'; 
 import { LinkedInSection } from './components/LinkedInSection'
-import { CookieBanner } from './components/CookieBanner'
+//import { CookieBanner } from './components/CookieBanner'
 import  Navbar from './components/Navbar'
 
 function App() {
@@ -23,7 +23,6 @@ function App() {
         <ContactSection />
       </main>
       <Footer />
-      <CookieBanner />
     </div>
   )
 }

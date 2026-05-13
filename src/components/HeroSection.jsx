@@ -26,7 +26,8 @@ export function HeroSection() {
               through technical grit and material innovation.
             </h2>
             <p className="mt-6 text-base font-medium leading-relaxed text-[var(--color-ink-muted)] md:text-lg lg:text-xl opacity-80 whitespace-nowrap overflow-visible">
-              A hands-on approach to solving the industrial challenges of the 2030 circular economy.
+              A hands-on approach to solving the industrial challenges  <br className="hidden lg:block" />
+              of the 2030 circular economy.
             </p>
           </div>
 

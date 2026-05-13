@@ -51,8 +51,7 @@ export function ValuePropositionSection() {
           </div>
 
           {/* Right Column: Pillars, aligned with photo */}
-          <div className="lg:col-span-7 flex flex-col justify-between py-2">
-            {pillars.map((pillar, index) => (
+<div className="lg:col-span-7 flex flex-col gap-12 lg:justify-between py-2">            {pillars.map((pillar, index) => (
               <Reveal key={index} delayMs={index * 100 + 200}>
                 <div className="group border-l-2 border-[var(--color-ink)]/20 pl-8 transition-all duration-300 hover:border-[var(--color-ink)]">
                   <h4 className="text-[14px] font-black uppercase tracking-widest text-[var(--color-ink)]">
