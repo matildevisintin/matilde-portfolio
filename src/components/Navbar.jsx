@@ -46,13 +46,15 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 md:py-5">
         
         {/* LOGO */}
-        <a href="#home" className="flex flex-col min-w-0" onClick={() => setOpen(false)}>
-          <span className="text-[14px] font-bold tracking-tight text-[var(--color-ink)] md:text-[16px]">
+<a href="#home" className="flex flex-row items-center gap-3 min-w-0" onClick={() => setOpen(false)}>
+  <img src="/favicon.svg" alt="MV" className="h-8 w-8" />
+  <div className="flex flex-col">          <span className="text-[14px] font-bold tracking-tight text-[var(--color-ink)] md:text-[16px]">
             MATILDE VISINTIN
           </span>
           <span className="text-[9px] uppercase tracking-[0.15em] text-[var(--color-ink)]/70 hidden sm:block">
             Materials Engineer
           </span>
+          </div>
         </a>
 
         {/* DESKTOP MENU */}
