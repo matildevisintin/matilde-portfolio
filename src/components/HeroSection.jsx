@@ -25,7 +25,7 @@ export function HeroSection() {
               Transforming composite waste into strategic resources <br className="hidden lg:block" />
               through technical grit and material innovation.
             </h2>
-            <p className="mt-6 text-base font-medium leading-relaxed text-[var(--color-ink-muted)] md:text-lg lg:text-xl opacity-80 whitespace-nowrap overflow-visible">
+            <p className="mt-6 text-base font-medium leading-relaxed text-[var(--color-ink-muted)] md:text-lg lg:text-xl opacity-80">
               A hands-on approach to solving the industrial challenges  <br className="hidden lg:block" />
               of the 2030 circular economy.
             </p>
